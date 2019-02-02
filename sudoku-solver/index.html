@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Solving a Sudoku</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                margin: 0;
+                padding: 1em;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            #sudokus{
+                width: 31em;
+                margin: 0 auto 100% auto;
+            }
+            .sudoku-container{
+                display: grid;
+                grid-template-columns: 3em 3em 3em 3em 3em 3em 3em 3em 3em;
+                grid-template-rows:  3em 3em 3em 3em 3em 3em 3em 3em 3em;
+                background-color: #E5DDCB;
+                grid-gap: 0.5em;
+                margin-top: 50px;
+                padding: 0.5em;
+                width: 31em;
+            }
+            .failed-attempt{
+                background-color: gainsboro;
+            }
+            .sudoku-cell{
+                word-wrap: break-word;
+                min-width: 0;
+                max-width: 100%;
+                background-color: #fff;
+                height: 50px;
+                animation-duration: 2s;
+                text-align: center;
+                line-height: 2;
+                
+            }
+            .checked{
+                background-color: #524656;
+                animation-duration: 2s;
+                animation-name: checking;
+                color: white;
+            }
+            .attempt{
+                background-color: #EB7B59;
+                color: white;
+            }
+            @keyframes checking {
+                from {background-color: #CF4647;}
+                to {background-color: #524656;}
+            }
+            .cell-9{
+                font-size: 50%;
+            }
+            .cell-8{
+                font-size: 55%;
+                animation-name: f9t8;
+            }
+            .cell-7{
+                font-size: 60%;
+                animation-name: f8t7;
+            }
+            .cell-6{
+                font-size: 65%;
+                animation-name: f7t6;
+            }
+            .cell-5{
+                font-size: 70%;
+                animation-name: f6t5;
+            }
+            .cell-4{
+                font-size: 75%;
+                animation-name: f5t4;
+            }
+            .cell-3{
+                font-size: 80%;
+                animation-name: f4t3;
+            }
+            .cell-2{
+                font-size: 90%;
+                animation-name: f3t2;
+            }
+            .cell-1{
+                font-size: 100%;
+                background-color: skyblue;
+                animation-name: f2t1;
+            }
+            @keyframes f9t8 {
+                from {font-size: 50%; background-color: #A7C5BD}
+                to {font-size: 55%;}
+            }
+            @keyframes f8t7 {
+                from {font-size: 55%; background-color: #A7C5BD}
+                to {font-size: 60%;}
+            }
+            @keyframes f7t6 {
+                from {font-size: 60%; background-color: #A7C5BD}
+                to {font-size: 65%;}
+            }
+            @keyframes f6t5 {
+                from {font-size: 65%; background-color: #A7C5BD}
+                to {font-size: 70%;}
+            }
+            @keyframes f5t4 {
+                from {font-size: 70%; background-color: #A7C5BD}
+                to {font-size: 75%;}
+            }
+            @keyframes f4t3 {
+                from {font-size: 75%; background-color: #A7C5BD}
+                to {font-size: 80%;}
+            }
+            @keyframes f3t2 {
+                from {font-size: 80%; background-color: #A7C5BD}
+                to {font-size: 90%;}
+            }
+            @keyframes f2t1 {
+                from {font-size: 90%; background-color: #A7C5BD}
+                to {font-size: 100%;}
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Solving a Sudoku</h1>
+        <div id="sudokus">
+        </div>
+        
+        
+        <script src="js/sudoku-solver.js">
+    
+        </script>
+    </body>
+</html>
